@@ -1,0 +1,85 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+.치료::after{content: ""; clear: both;
+display: block;}
+
+.전체{
+    background-color: gray;
+    width: 600px;
+    border: 5px solid black;
+    margin-left: 100px;
+    margin-top: 200px;}
+
+.전체>div{
+    position: relative;
+    width: 150px;
+    height: 150px;   }
+
+.전체 .pink{
+    background-color: pink;
+    position: static; /* /left가 적용이 안됨 */
+    left: 50px;}
+
+.전체 .green{
+    background-color: green;
+    position: relative;
+    /* 원래 자신의 위치를 기억
+    주위에 아무런 영향을 주지 않음
+    left, top의 기준은 자신의 원래위치
+    top이 위에서 부터 50px 떨어지는게 아닌 그린 나 자신의 위가 기준 */
+    left: 250px; top: 50px;}
+
+.전체 .red{
+    background-color: red;
+    position: absolute;
+    /* 원래가진 자신의 영역을 상실
+    조상을 기준으로 삼지만
+    조상이 기준이 되기 위해서는 조상의 position이 
+    relative, absolute, fixed 이면 기준이 될수 있다 */
+    left: 100%; top: 100px;}
+
+.전체 .blue{
+    position: fixed;
+    /* 윈도우기준으로 배치 */
+    right: 50px; top: 100px;
+    background-color: blue;
+    /* 화면에 그냥 붙어있음 
+    <예> 홈페이지 우측에 고정되어 최근 열어본 페이지 */}
+
+.영역{margin-top: 50px;
+background-color: gray;
+border: 5px solid black;
+width: 1000px;
+margin: 50px auto 0;
+padding: 20px;
+box-sizing: border-box; /* 보더와 패딩이 가진것을 전부 박스안으로 들어오게 함 */}
+
+.영역>div{
+    background-color: green;
+    width: 49%;
+    float: left;
+    height: 300px;}
+
+.영역>div.포지션1{
+    margin-right: 2%;
+    position: relative; /* 주위에 아무런 영향을 주지 않음 */
+    overflow: hidden; /* 넘치는것을 숨겨버림 */}
+
+.영역>div.포지션1 .포자{
+    width: 0%;
+    height: 0%;
+    background-color: pink;
+    position: absolute; /* 누군가에게 붙음 */
+    left: 50%; top: 50%; /* 부모의 넓이기준 / 부모의 높이기준
+    } */
+    transform: translate(-50%, -50%);
+    /* transform: translate(x축, y축); %의 기준이 자신 */
+    transition: 0.5s;}
+
+.영역>div.포지션1:hover .포자{
+    width: 120%;
+    height: 120%;}
+
+
+.space{
+    height: 2000px;}

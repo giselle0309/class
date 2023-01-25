@@ -1,0 +1,240 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clear:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.전체 {
+    background-color: bisque;
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 30px 0;
+}
+
+.전체 .첫째 {
+    background-color: darkkhaki;
+    width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    /* width값에 padding값 포함해서 계산 */
+}
+
+/* 부모의 영역에서 가운데 */
+.전체 .첫째>div {
+    background-color: lightcoral;
+    height: 200px;
+    width: 47.5%;
+    float: left;
+}
+
+.전체 .첫째 .첫손1 {
+    position: relative;
+    margin-right: 5%;
+    background-image: url(img/img1.jpg);
+    background-size: cover;
+    overflow: hidden;
+    /* sticky 기능은 overflow기능이 있으면 적용 안됨 */
+}
+
+.전체 .첫째 .첫손1 h4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    /* rgba는 투명도 */
+    color: black;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.전체 .첫째 .첫손1 .right {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* 넓이 높이 부모의 100% */
+    background: url(img/img2.jpg);
+    background-size: cover;
+    /* left: 100%; 나의 왼쪽과 부모왼쪽을 100% 떨어트리겠다 */
+    transition: 0.3s;
+}
+
+.전체 .첫째 .첫손1:hover .right {
+    left: 0;
+}
+
+.전체 .첫째 .첫손2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.전체 .첫째 .첫손2 video {
+    /* 태그 이름이 비디오라서 .찍지 않음 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+}
+
+
+.전체 .둘째 {
+    background-color: lightsalmon;
+    width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    box-sizing: border-box;
+
+}
+
+.전체 .둘째>div {
+    background-color: darksalmon;
+    float: left;
+    width: 23.5%;
+    margin-right: 2%;
+    height: 200px;
+    position: relative;
+
+}
+
+.전체 .둘째>div.둘자4 {
+    margin-right: 0;
+}
+
+.전체 .둘째>div>div {
+    position: absolute;
+    /* 각 자식은 각 부모의 기준이 됨 */
+    left: 50%;
+    top: 50%;
+    background-color: lightpink;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.전체 .둘째>div>div.둘손2 {
+    right: 0;
+    /* 이미 왼쪽값 50%가 있기때문에 아랫쪽에 쓰면 원래 힘이 더 세지지만 
+    left right 에서는 left가 더 셈.(하보다는 상이 셈) 따라서 left에 auto를 넣어줌  */
+    left: auto;
+    transform: none;
+    top: auto;
+    bottom: 0;
+}
+
+.전체 .둘째>div>div.둘손3 {
+    left: auto;
+    right: 0;
+    transform: none;
+    top: 0;
+}
+
+.전체 .둘째>div>div.둘손4 {
+    left: 0;
+    transform: none;
+    top: auto;
+    bottom: 0;
+}
+
+
+.전체 .셋째 {
+    background-color: darkorange;
+    width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    /* padding 사방에 30을 줬을때 넓이를 포함시킬때 */
+}
+
+.전체 .셋째>div {
+    background-color: chocolate;
+    width: 45%;
+    float: left;
+    height: 200px;
+}
+
+.전체 .셋째>div.세자1 {
+    position: relative;
+    margin-right: 10%;
+    overflow: hidden;
+}
+
+.전체 .셋째>div.세자1>div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.전체 .셋째>div.세자1>div h4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* 정중앙으로 오게함 */
+    transform: translate(-50%, -50%);
+    /* 정중앙으로 오게함 */
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 40px;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.전체 .셋째>div.세자1>div.세손1 {
+    background-image: url(img/img1.jpg);
+    background-size: cover;
+    z-index: 10;
+    left: 100%;
+    transition: 0.3s;
+}
+
+.전체 .셋째>div.세자1:hover>div.세손1 {
+    left: 0;
+
+}
+
+.전체 .셋째>div.세자1>div.세손2 {
+    background-image: url(img/img2.jpg);
+    background-size: cover;
+}
+
+.전체 .셋째>div.세자2 {
+    overflow: hidden;
+    position: relative;
+}
+
+.전체 .셋째>div.세자2 video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+}
+
+.전체 .넷째{
+    background-color: darkgreen;
+    width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.전체 .넷째>div{}
+.전체 .넷째 .네자1{}
+.전체 .넷째 .네자1 h4{}

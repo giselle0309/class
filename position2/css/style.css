@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.치료::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+.전체 {
+    color: red;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: grey;
+    height: 600px;
+}
+
+
+.전체 .첫째 {
+    background: #39B5E0;
+    padding: 20px;
+}
+
+.전체 .첫째 .첫자 {
+    background: #A31ACB;
+    width: 32%;
+    margin-right: 2%;
+    height: 200px;
+    float: left;
+}
+
+.전체 .첫째 .첫자.첫자1 {
+    position: relative;
+    /* 기준을 잡아주기 위해서 */
+    overflow: hidden;
+    /* 내 영역보다 넘치는것은 안보이게함 */
+}
+
+.전체 .첫째 .첫자.첫자1 .하 {
+    position: relative;
+    height: 100%;
+    /* 부모의 높이를 100%다 */
+    background-image: url(../image/img1.jpg);
+    background-size: cover;
+    background-position: center;
+    /* *x, y 를 정중앙으로 맞춤, 둘다 center라면 한번만 적어도 됨*/
+}
+
+/* contain 과 cover의 차이점 */
+
+
+.전체 .첫째 .첫자.첫자1 .하 h4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.전체 .첫째 .첫자.첫자1 .상 {
+    height: 100%;
+    /* 부모인 첫자 높이를 따라가겠다 */
+    background-image: url(../image/img2.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    /* position: absolute 는 인라인 요소처럼 자식의 공간만 차지.넓이를 다시 설정 해야함 */
+    left: 100%;
+    top: 0;
+    width: 100%;
+    /* 부모의 넓이를 따라가겠다 */
+    transition: 0.4s;
+
+}
+
+.전체 .첫째 .첫자.첫자1:hover .상 {
+    left: 0;
+}
+
+.전체 .첫째 .첫자.첫자1 .상 h4 {
+    position: absolute;
+    /* 부모에도 앱솔루트가 있으면 걸림 */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* 자기 몸을 변형시키는 */
+
+}
+
+
+.전체 .첫째 .첫자.첫자2 {
+    position: relative; /* 아무런 영향없이 기준이 되는것 */
+    overflow: hidden;
+}
+
+.전체 .첫째 .첫자.첫자2>div {
+    height: 100%;
+    position: absolute;
+    left: 0;top: 0;
+    width: 100%;
+}
+
+.전체 .첫째 .첫자.첫자2>div h4{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.전체 .첫째 .첫자.첫자2 .상 {
+    background-image: url(../image/img3.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+   /*  앞뒤로 보내는 z-index는 position이 있어야 사용 가능
+   (relative, absolute, fixed) 첫자2>div에 position: absolute; 있어서 가능한것*/
+   top: -100%;
+   transition: 0.3s;
+}
+
+.전체 .첫째 .첫자.첫자2:hover .상 {
+    top: 0;
+}
+
+.전체 .첫째 .첫자.첫자2 .상 h4 {}
+
+.전체 .첫째 .첫자.첫자2 .하 {
+    background-image: url(../image/img4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.전체 .첫째 .첫자.첫자2 .하 h4 {}
+
+
+
+.전체 .첫째 .첫자.첫자3 {
+    margin-right: 0;
+    position: relative; /* 기준이 될수있도록 */
+}
+
+.전체 .첫째 .첫자.첫자3>div{
+    height: 100%; /* 높이를 부모의 100%로 하겠다 */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: 0;top: 0;
+    width: 100%;
+
+}
+.전체 .첫째 .첫자.첫자3>div h4{
+    position: absolute;
+    left: 50%;top: 50%;
+   
+}
+
+.전체 .첫째 .첫자.첫자3 .상{
+    background-image: url(../image/img5.jpg);
+    z-index:  10;
+    opacity: 0;
+    transform: scale(0.3);
+    transition: 0.3s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0, 2.2);
+}
+
+.전체 .첫째 .첫자.첫자3:hover .상{
+    opacity: 1;
+    transform: scale(1); /* 크기를 조절 */
+    border-radius: 50%; /* 래디우스 반경을 줌 */
+
+}
+
+.전체 .첫째 .첫자.첫자3 .하{
+    background-image: url(../image/img6.jpg);
+}
+
+
+.전체 .둘째{
+    background-color: green;
+    /* %의 기준
+    width --> 부모(.전체)의 넓이
+    height --> 부모(.전체)의 높이
+             단 부모가 높이값이 있어야한다 */
+ /*    padding, margin 은 상하좌우 모두 부모의 넓이 */
+    width: 30%;
+    height: 30%;
+    padding: 5%;
+    margin-top: 5%;
+
+
+}

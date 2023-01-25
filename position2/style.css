@@ -1,0 +1,36 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+.치료::after{content: ""; clear: both; display: block;}
+
+.전체{
+    color: red;
+    width: 1000px;
+    margin: 0 auto; padding: 20px;
+    margin-top: 30px; }
+
+.전체 .첫째{
+    background-color: #EAC7C7;
+    padding: 20px;
+
+}
+.전체 .첫째 .첫자{
+    background-color: #A0C3D2;
+    width: 32%;
+    margin-right: 2%;
+    height: 200px;
+    float: left;
+}
+
+.전체 .첫째 .첫자.첫자1{}
+.전체 .첫째 .첫자.첫자1 .하{
+    background-image: url();
+}
+.전체 .첫째 .첫자.첫자1 .하 h4{} /* 태그에는 .붙이지 않는다 */
+
+
+
+.전체 .첫째 .첫자.첫자2{}
+.전체 .첫째.첫자3{
+    margin-right: 0;
+}
