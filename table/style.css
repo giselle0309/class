@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    width: 900px;
+    margin: 0 auto;
+    padding: 10% 0;
+    /* 마진과 패딩의 %는 부모의 넓이기준 */
+}
+
+.wrap>div {
+    margin-top: 50px;
+    border-top: 1px solid #ddd;
+}
+
+.table1 {
+    text-align: center;
+}
+
+.table1 table {
+    border: 1px solid #ccc;
+    width: 100%;
+    /* 표가 화면 가득이됨 */
+}
+
+.table1 th {
+    border: 1px solid #ccc;
+}
+
+.table1 tr {
+    border: 1px solid #ccc;
+}
+
+.table1 td {
+    border: 1px solid #ccc;
+}
+
+.table1-2 table {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.table1-2 table tr {}
+
+.table1-2 table tr th {
+    border: 1px solid #ccc;
+}
+
+.table1-2 table tr td {
+    border: 1px solid #ccc;
+}
+
+.table2 table {
+    width: 100%;
+}
+
+.table2 tr:nth-child(1) {
+    border-bottom: 3px double #000;
+}
+
+/* 첫번째 행 아랫쪽에 double border를 주겠다 */
+
+.table2 tr:nth-child(2) {
+    height: 100px;
+}
+
+.table2 table,
+.table2 th,
+.table2 td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    background-color: cornsilk;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.table2 th:nth-child(1) {
+    width: 20%;
+}
+
+.table2 th:nth-child(2) {
+    width: 60%;
+}
+
+.table2 th:nth-child(3) {
+    width: 20%;
+}
+
+.table3 table {
+    width: 100%;
+}
+
+.table3 table,
+.table3 th,
+.table3 td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.table4 table {
+    width: 100%;
+}
+
+.table4 table,
+.table4 th,
+.table4 td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.table5 table {
+    width: 100%;
+}
+
+.table5 table,
+.table5 th,
+.table5 td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.table6 table {
+    width: 100%;
+}
+.table6 table,
+.table6 th,
+.table6 td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+.table7 table {
+    width: 100%;
+}
+.table7 table,
+.table7 th,
+.table7 td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.table8 table {
+    width: 100%;
+}
+.table8 table,
+.table8 th,
+.table8 td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+/* .table8 tr:nth-child(even){ */
+.table8 tr:nth-child(2n){
+    background-color: rgba(150,212,212,0.4);
+}
+/* .table8 tr:nth-child(odd){ */
+.table8 tr:nth-child(2n+1){
+    background-color: rgba(230, 189, 139, 0.4);
+}
+
+.table8 td:nth-child(even),
+.table8 th:nth-child(even){
+    background-color: rgba(150,212,212,0.4);
+}
+
+.table9 table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.table9 table td,
+.table9 table th{padding: 15px;}
+
+.table9 table tr{border: 1px solid #ccc;}
+.table9 table tr:hover{background-color: rgba(150,212,212,0.4);}
+
+
+
+
+.table10 table {
+    width: 100%;
+}
+.table10 table,
+.table10 th,
+.table10 td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.table10 colgroup col:nth-child(1){
+    background-color: skyblue;
+}
+.table10 colgroup col:nth-child(2){
+    background-color: lightpink;
+}
+.table10 colgroup col:nth-child(3){
+    background-color: lightseagreen;
+}
